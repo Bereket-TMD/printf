@@ -6,7 +6,6 @@
 
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
-
 /* FLAGS */
 #define F_MINUS 1
 #define F_PLUS 2
@@ -19,28 +18,28 @@
 #define S_SHORT 1
 
 /**
- * struct fmt - Struct op
+ * struct muk - Struct op
  *
- * @fmt: The format.
- * @fn: The function associated.
+ * @muk: The format.
+ * @mu: The function associated.
  */
-struct fmt
+struct muk
 {
-	char fmt;
-	int (*fn)(va_list, char[], int, int, int, int);
+	char muk;
+	int (*mu)(va_list, char[], int, int, int, int);
 };
 
 
 /**
- * typedef struct fmt fmt_t - Struct op
+ * typedef struct muk muk_t - Struct op
  *
- * @fmt: The format.
+ * @muk: The format.
  * @fm_t: The function associated.
  */
-typedef struct fmt fmt_t;
+typedef struct muk fmt_t;
 
 int _printf(const char *format, ...);
-int handle_print(const char *fmt, int *i,
+int handle_print(const char *muk, int *i,
 va_list list, char buffer[], int flags, int width, int precision, int size);
 
 /****************** FUNCTIONS ******************/
